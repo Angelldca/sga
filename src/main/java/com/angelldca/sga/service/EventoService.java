@@ -65,4 +65,16 @@ public class EventoService {
         }
         this.eventoRepository.changeActiveEvent(id,active);
     }
+
+    public void update(Evento evento){
+        Evento existingEvento = eventoRepository.findById(evento.getId())
+                .orElseThrow(() -> new RuntimeException("Evento no encontrado"));
+        existingEvento.setName(evento.getName());
+        existingEvento.setActivo(evento.isActivo());
+        existingEvento.setHoraInicio(evento.getHoraInicio());
+        existingEvento.setHoraFin(evento.getHoraFin());
+
+        // Guardar el evento actualizado
+        eventoRepository.save(existingEvento);
+    }
 }

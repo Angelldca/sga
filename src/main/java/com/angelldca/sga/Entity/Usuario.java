@@ -6,6 +6,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,6 +19,13 @@ public class Usuario {
     private Long id;
     @NotNull(message = "El nombre es requerido")
     private String name;
+    @NotNull(message = "El username es requerido")
+    private String username;
+    @NotNull(message = "La contraseña es requerida")
+    @Size(min = 8, message = "La contraseña debe tener al menos 8 caracteres")
+    private String pass;
+
+
 
     @ManyToMany
     @JoinTable(

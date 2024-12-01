@@ -21,8 +21,10 @@ public class Plato {
     private String name;
     private double price = 0;
     @NotNull(message = "La cantidad es requerida")
-    @NotBlank(message = "Debe proporcionar una cantidad para el plato")
+
     private double cantidad;
+
+    @NotNull(message = "La unidad de medida es reuqerida")
     @ManyToOne
     @JoinColumn(name = "medida_id", nullable = false)
     private Medida medida;

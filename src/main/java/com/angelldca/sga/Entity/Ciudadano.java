@@ -26,6 +26,7 @@ public class Ciudadano {
     @NotBlank(message =  "Debe proporcionar un área")
     @NotNull(message = "El área es requerida")
     private String area;
+    private String img;
     @ManyToOne
     @JoinColumn(name = "comedor_id", nullable = false)
     private Comedor comedor;

@@ -3,10 +3,7 @@ package com.angelldca.sga.Entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Data
@@ -16,6 +13,7 @@ public class Medida {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   @NotBlank(message = "El nombre es requerido")
+  @Column(unique = true)
   private String name;
 
 

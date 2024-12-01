@@ -1,4 +1,9 @@
 package com.angelldca.sga.repository;
 
-public interface MedidaRepository {
+
+import com.angelldca.sga.Entity.Medida;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface MedidaRepository extends IRepository<Medida, Long>{
 }
